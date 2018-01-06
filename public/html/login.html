@@ -1,0 +1,93 @@
+<script>gtag('config', 'UA-110501232-1',{'page_path': 'Login_click'});</script>
+<section style="width:375px">
+    <div class="modal-header" style="border:none; height:5px;background-color: #f9f9f9;">
+      <button type="button" class="close" id="close"  data-dismiss="modal" aria-label="Close" ng-click="exit()"><span aria-hidden="true" ng-click="close()">&times;</span></button>
+    </div>
+    <div ng-show="err=='err'" style="width:100%;height:40px;background:#f7acac;">
+      <center>
+      <p style="color:white;padding:8px">Login to start discussion</p></center>
+</div>
+        <div  ng-show="forgetpassword=='false'" id="login" style="
+    padding: 40px;
+    background-color: #f9f9f9;">
+            <!--form-horizontal-->
+            <div class="form-group" style="color: #000000;margin-bottom: 5px;font-weight: 400;">Email</div>
+            <div class="form-group">
+              <input style="border: 1px solid #ccc !important; height:40px; border-radius: 0px;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;" ng-change="namechange()" type="text" ng-model="email" autocomplete="off" validate-on="dirty" class="form-control input-sm loginInput inputMaxWidth ng-pristine ng-invalid ng-invalid-required ng-touched" required-message="'Email Address Cannot be Blank'"
+                placeholder="Email" required="">
+                <font ng-show="nameerror" style="color: #a94442;"> please enter the name </font>
+            </div>
+            <div class="form-group" style="color: grey;height: 10px;"> <span style="float:left;font-weight: 400;color:black;">Password</span>
+              <a ng-click="forgetPassword()" style="
+    float: right;
+    font-weight: 100;
+    text-decoration: none;
+">Forget Password?</a>
+            </div>
+            <div class="form-group">
+              <input style="border: 1px solid #ccc !important; height:40px;border-radius: 0px;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;" ng-change="passwordchange()" automcomplete="off"
+ type="password" ng-model="password" validate-on="dirty" class="form-control input-sm loginInput inputMaxWidth ng-pristine ng-untouched ng-invalid ng-invalid-required" required-message="'Password Cannot be Blank.'"
+                placeholder="Password" required="">
+                <font ng-show="passworderror" style="color: #a94442;"> please enter the password </font>
+            </div>
+            <input class="loginButton" ng-click="fnAuthenticateUser()" style="
+    font-weight: 400;
+" type="submit" value="Login" class="btn btn-block singinButton inputMaxWidth">
+            <div class="form-group" style="margin-top: 10px;font-weight: 100;color: grey;">New to virtualgodown? <a style="text-decoration:none;cursor: pointer;" ng-click="signup()"> Create a new account</a></div>
+        </div>
+        <!--- end of login -->
+        <div id="login" ng-show="forgetpassword=='true'" style="
+    padding: 40px;
+    background-color: #f9f9f9;">
+            <!--form-horizontal-->
+            <div class="form-group" style="color: #000000;margin-bottom: 5px;font-weight: 400;">Email</div>
+            <div class="form-group">
+              <input style="border: 1px solid #ccc !important; height:40px; border-radius: 0px;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;" ng-change="emailchange()" type="text" ng-model="email" name="email" validate-on="dirty" class="form-control input-sm loginInput inputMaxWidth ng-pristine ng-invalid ng-invalid-required ng-touched" required-message="'Email Address Cannot be Blank'"
+                placeholder="Email" required="">
+                <font ng-show="emailerror" style="color: #a94442;"> please enter the valid email </font>
+            </div>
+            <input class="loginButton" ng-click="sendotp()" style="
+    font-weight: 400;
+" type="submit" value="send otp" class="btn btn-block singinButton inputMaxWidth">
+            <div class="form-group" style="margin-top: 10px;font-weight: 100;color: grey;">New to virtualgodown? <a style="text-decoration:none;cursor: pointer;" ng-click="signup()"> Create a new account</a></div>
+        </div>
+        <div id="login" ng-show="forgetpassword=='otp'" style="
+    padding: 40px;
+    background-color: #f9f9f9;">
+            <!--form-horizontal-->
+            <div class="form-group" style="color: #000000;margin-bottom: 5px;font-weight: 400;">Otp</div>
+            <div class="form-group">
+              <input style="border: 1px solid #ccc !important; height:40px; border-radius: 0px;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;" ng-change="otpchange()" type="number" ng-model="otp" name="email" validate-on="dirty" class="form-control input-sm loginInput inputMaxWidth ng-pristine ng-invalid ng-invalid-required ng-touched" required-message="'Email Address Cannot be Blank'"
+                placeholder="otp" required="">
+                <font ng-show="otperror" style="color: #a94442;"> please enter the valid otp </font>
+            </div>
+            <input class="loginButton" ng-click="verifyotp()" style="
+    font-weight: 400;
+" type="submit" value="verify" class="btn btn-block singinButton inputMaxWidth">
+            <div class="form-group" style="margin-top: 10px;font-weight: 100;color: grey;">New to virtualgodown? <a style="text-decoration:none;cursor: pointer;" ng-click="signup()"> Create a new account</a></div>
+        </div>
+        <div id="login" ng-show="forgetpassword=='password'" style="
+    padding: 40px;
+    background-color: #f9f9f9;">
+            <!--form-horizontal-->
+            <div class="form-group" style="color: #000000;margin-bottom: 5px;font-weight: 400;">change password</div>
+            <div class="form-group">
+              <input style="border: 1px solid #ccc !important; height:40px; border-radius: 0px;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;" ng-change="passwordchange()" type="password" ng-model="password" name="email" validate-on="dirty" class="form-control input-sm loginInput inputMaxWidth ng-pristine ng-invalid ng-invalid-required ng-touched" required-message="'Email Address Cannot be Blank'"
+                placeholder="password" required="">
+                <input style="border: 1px solid #ccc !important; height:40px; border-radius: 0px;
+      -webkit-box-shadow: 0 0 0 1000px white inset !important;" type="password" ng-model="conformpassword"  validate-on="dirty" class="form-control input-sm loginInput inputMaxWidth ng-pristine ng-invalid ng-invalid-required ng-touched" required-message="'Email Address Cannot be Blank'"
+                  placeholder="conform password" required="">
+                <font  style="color: orange;"><i class="fa fa-info-circle" style="color:orange" aria-hidden="true"></i> password should have more than 6 letters, one numeric and a uppercase </font>
+<br>                <font ng-show="mismatch" style="color: #a94442;"> password mismatch </font>
+            </div>
+            <input class="loginButton" ng-click="changepassword()" style="
+    font-weight: 400;
+" type="submit" value="change password" class="btn btn-block singinButton inputMaxWidth">
+            <div class="form-group" style="margin-top: 10px;font-weight: 100;color: grey;">New to virtualgodown? <a style="text-decoration:none;cursor: pointer;" ng-click="signup()"> Create a new account</a></div>
+        </div>
+</section>

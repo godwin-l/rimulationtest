@@ -1,0 +1,94 @@
+[{
+  "rest" : "/api/token/login",
+  "method" : "POST",
+  "permission" : ["ADMIN","COLLABRATOR"]
+},{
+    "rest" : "/api/users/adduser",
+    "method" : "POST",
+    "permission" : ["ADMIN","COLLABRATOR"]
+},{
+  "rest" : "/api/users/subscribe",
+  "method" : "POST",
+  "permission" : ["ADMIN","COLLABRATOR"]
+},{
+    "rest" : "/api/secured/users/geturl",
+    "method" : "GET",
+    "permission" : ["ADMIN","COLLABRATOR"]
+},{
+    "rest" : "/api/secured/users/autocomplete",
+    "method" : "GET",
+    "permission" : ["ADMIN","COLLABRATOR"]
+},{
+    "rest" : "/api/users/validatetoken",
+    "method" : "POST",
+    "permission" : ["ADMIN","COLLABRATOR"]
+},{
+    "rest" : "/api/secured/users/getcodes",
+    "method" : "GET",
+    "permission" : ["ADMIN","COLLABRATOR"]
+},{
+    "rest" : "/api/secured/users/update",
+    "method" : "POST",
+    "permission" : ["ADMIN","COLLABRATOR"]
+},{
+    "rest" : "/api/users/checkemail",
+    "method" : "POST",
+    "permission" : ["ADMIN","COLLABRATOR"]
+},{
+  "rest" : "/api/users/resetpassword",
+  "method" : "POST",
+  "permission" : ["ADMIN","COLLABRATOR"]
+},{
+  "rest" : "/api/token/checktoken",
+"method" : "POST",
+"permission" : ["ADMIN","COLLABRATOR"]
+},{
+  "rest" : "/api/secured/users/getuser",
+  "method" : "get",
+  "permission" : ["ADMIN","COLLABRATOR"]
+},{
+    "rest" : "/api/secured/users/updateprofilepic",
+    "method" : "POST",
+    "permission" : ["ADMIN","COLLABRATOR"]
+},{
+    "rest" : "/api/secured/users/verify",
+    "method" : "POST",
+    "permission" : ["ADMIN","COLLABRATOR"]
+},{
+    "rest" : "/api/users/forgetPassword",
+    "method" : "POST",
+    "permission" : ["ADMIN","COLLABRATOR"]
+},{
+"rest" : "/api/discussion/getdiscussions",
+"method" : "get",
+"permission" : ["ADMIN","COLLABRATOR"]
+},{
+"rest" : "/api/discussion/getdiscussion",
+"method" : "get",
+"permission" : ["ADMIN","COLLABRATOR"]
+},{
+"rest" : "/api/secured/discussion/adddiscussion",
+"method" : "post",
+"permission" : ["ADMIN","COLLABRATOR"]
+},{
+"rest" : "/api/secured/discussion/addcomment",
+"method" : "post",
+"permission" : ["ADMIN","COLLABRATOR"]
+},{
+"rest" : "/api/blog/getblogs",
+"method" : "get",
+"permission" : ["ADMIN","COLLABRATOR"]
+},{
+"rest" : "/api/blog/getblog",
+"method" : "get",
+"permission" : ["ADMIN","COLLABRATOR"]
+},{
+"rest" : "/api/secured/blog/addblog",
+"method" : "post",
+"permission" : ["ADMIN","COLLABRATOR"]
+},{
+"rest" : "/api/secured/blog/addcomment",
+"method" : "post",
+"permission" : ["ADMIN","COLLABRATOR"]
+}
+]

@@ -1,0 +1,139 @@
+{
+    "port": 80,
+    "env":"development",
+    "mongoose": {
+        "uri": "mongodb://heroku_01mhmhnw:903uc7ceculh0n7a2l8ln88ejv@ds153494.mlab.com:53494/heroku_01mhmhnw"
+    },
+    "auth":{
+      "issuer": "https://cryptic-meadow-48081.herokuapp.com/api/oauth/token",
+      "nonce": "Qgn78/5DF?",
+      "aud": "vg",
+      "secret":"V137u@l5Od0wN",
+      "securedurl":"/api/secured"
+    },
+"status":
+{
+"user":{
+"active":{
+  "After_signup":200,
+  "subscribe":205,
+"After_Reactivation":201
+},
+"inactive":{
+"userDeleted":500
+}
+},
+"blog":{
+  "active":{
+    "default":201,
+    "active":200
+  },
+  "inactive":{
+    "deleted":500
+  }
+},
+"organisation":{
+"active":{
+"default":201,
+"createdByuser":200,
+"Verified":202
+},
+"inactive":{
+"userDeleted":500,
+"organisationDeleted":501
+}
+},
+"product":{
+"active":{
+"created":200
+},
+"inactive":{
+"userDeleted":500,
+"organisationDeleted":501,
+"productDeleted":502,
+"pendingApproval":503
+}
+},
+"stockarea":{
+"active":{
+"created":200,
+"FindingDistance":202,
+"After_Reactivation":203
+},
+"inactive":{
+"userDeleted":500,
+"organisationDeleted":501,
+"stockareaDeleted":502
+}
+},
+"inventory":{
+"active":{
+"created":200
+},
+"inactive":{
+"userDeleted":500,
+"organisationDeleted":501,
+"stockareaDeleted":502,
+"RemovedFromInventory":503
+}
+},
+"quote":{
+"active":{
+"created":200
+},
+"inactive":{
+"userDeleted":500,
+"organisationDeleted":501,
+"stockareaDeleted":502,
+"RemovedFromInventory":503,
+"nostock":504,
+"quoteDeleted":505
+}
+}
+},
+    "deleteType":{
+      "user":1,
+      "organisation":2,
+      "stockarea":3,
+      "product":4,
+      "productstock":5,
+      "sell":6
+    },
+    "product":{
+    "type":{
+      "virtualgodown":1000,
+      "withInOrganisation":1001,
+      "withInNetwork":1002
+  }
+    },
+    "errorcodes":{
+        "InternalServerError":500,
+        "InputsError":625,
+        "DuplicateUser":360,
+        "DuplicateEmail/Mobile":385,
+        "tokenExpired":362,
+        "unauthorised":400,
+        "passwordNotMatch":403,
+        "Email/MobileNotverified":413
+      },
+    "default": {
+        "api": {
+            "version" : "v1"
+        },
+        "user": {
+            "username": "myapi",
+            "password": "abc1234"
+        },
+        "client": {
+            "name": "vgAppClient",
+            "clientId": "$vgodown1",
+            "clientSecret": "grnklnio576543hyjvbk"
+
+        }
+    },
+    "domain" : {
+      "baseURL" : "http://localhost/reset/",
+      "emailURL":"http//localhost/api/userbasic/verfication?token="
+  },
+  "defaultImageUrl":"https://s3-us-west-2.amazonaws.com/virtualgodown/avatar.png"
+}

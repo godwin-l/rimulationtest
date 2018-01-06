@@ -1,0 +1,41 @@
+<script>gtag('config', 'UA-110501232-1',{'page_path': 'Signup_click'});</script>
+<section style="width:375px">
+
+  <div class="modal-header" style="border:none; height:5px;background-color: #f9f9f9;">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()"><span aria-hidden="true">&times;</span></button>
+  </div>
+        <div style="
+    padding: 40px;
+    background-color: #f9f9f9;">
+    <div class="form-group" style="color: black;">Name</div>
+    <div class="form-group">
+        <input type="text" autocomplete="off" ng-model="fullName" ng-change="namechange()" validate-on="dirty" class=" inputAll form-control input-sm loginInput inputMaxWidth ng-pristine ng-invalid ng-invalid-required ng-touched ng-untouched " required-message="'Name Cannot be Blank'" placeholder="Your Name" required="">
+        <font ng-show="nameerror" style="color: #a94442;"> please enter the name </font>
+    </div>
+    <div class="form-group" style="color: black;margin-top:10px">Email</div>
+<div class="form-group">
+        <input type="text" autocomplete="off" ng-model="email" ng-change="emailchange()" style="margin-top:20px;" validate-on="dirty" class="inputAll form-control input-sm loginInput inputMaxWidth ng-pristine ng-invalid ng-invalid-required ng-touched ng-untouched " required-message="'Email Address Cannot be Blank'" placeholder="Email" required="">
+<br>
+        <i class="fa fa-times" ng-show="emailstate=='Not exist!'" style="
+            color: #a94442;
+            float: left;
+            position: relative;
+            top: -10px;
+            margin-left:3px;
+        "
+        ><font color="#a94442">Email id is invalid or already taken</font></i>
+    </div><br>
+    <div class="form-group" style="color: black;margin-top:-21px"> Password
+</div>
+    <div class="form-group">
+        <input  type="password" autocomplete="off" ng-model="userPassword" ng-change="passwordchange()" validate-on="dirty" class="inputAll form-control input-sm loginInput inputMaxWidth ng-pristine ng-untouched ng-invalid ng-invalid-required inputAll" required-message="'Password Cannot be Blank'" placeholder="Password"  required="">
+        <font  style="color: orange;"><i class="fa fa-info-circle" style="color:orange" aria-hidden="true"></i> password should have more than 8 letters, one numeric, one special character and a uppercase </font>
+      <br>  <font ng-show="passworderror" style="color: #a94442;"> password rule doesn't match </font>
+    </div>
+
+    <input type="submit" style="border-radius: 0px;" ng-click="fnRegisterUser()" value="SignUp" class="addstockareabtn btn btn-block singinButton inputMaxWidth">
+
+<div class="form-group" class="margin10" style="color: grey;    margin-top: 5px; font-weight: 100;">By clicking the create account below You are agreeing the<a style="cursor: pointer;" ng-click="viewTerms()"> terms and conditions.</a></div>
+
+        </div>
+</section>

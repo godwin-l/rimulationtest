@@ -1,0 +1,322 @@
+<style>
+td{
+    padding: 10px;
+    width: 50%;
+}
+</style>
+<div class="container-fluid" style="height:50px;" ng-controller="headercontroller">
+	<div class="row">
+    <nav id="aic-TopNav" class="aic-TopNav aic-TopNav--scrolled">
+  <div class="TopNav-container">
+    <div class="loginheaderlogodiv" ng-click="home()">
+      <a>
+        <img src="/images/r2.png" style="padding-left:10px" class="headerlogoimg">
+      </a>
+    </div>
+    <div class="aic-TopNavRightSide">
+      <ul class="TopNav-links">
+          <li><a id="home" ng-click="godiscussion()" href="#">Discussions</a></li>
+          <li><a id="about" ng-click="goblog()" href="#">Blogs</a></li>
+          <li><a id="people" ng-click="gopeople()" href="#">People</a></li>
+        <li><a ng-click="whitepaper()" href="#">White Paper</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a ng-show="!user" ng-sref="login" ng-click="login()" href="#">Login</a></li>
+        <li><a ng-show="!user" ng-click="signup()" href="signUp" ng-sref="signUp" href="#">Signup</a></li>
+        <li id="afterlogin" ng-show="user">
+          <div class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+            <img alt="" class="img-circle" src={{profilePic}} width="30">
+          </a>
+          <ul class="dropdown-menu" style="width:202px;height:200px;" ng-class="{'height':newup}">
+            <li>
+              <div>
+              <div class="container1" ng-show="!newup" style="width: 200px; height: 255px;" aria-hidden="false">
+<input style="display:none;" type="file" id="fileInput" onchange="angular.element(this).scope().uploadFile(this.files[0])">
+<img src={{profilePic}}  id="img" style="width:200px;height:200px;margin-top: -4vw;margin-left: -3.6vw;">
+<div class="overlay1" style="border-style: solid;border-width:1px;border-color: #d0d4d8;margin-top: -4vw;margin-left: -3.6vw;height: 200px;width: 200px;"></div>
+<div style="display:none;
+" id="image" class="button1" onclick="document.getElementById('fileInput').click();"><a  style="
+  border-style: solid;
+  border-color: #eeeeee;
+  color: #eeeeee;
+  margin-left:-3vw;
+"> Upload</a></div>
+</div>
+<div ng-hide="!newup" class="cropAreaproduct ng-hide" style="width:200px;height:200px" aria-hidden="true" style="">
+<img-crop image="myImage" result-image="myCroppedImage" area-type="square" result-image-format="image/jpeg" result-image-size="200" result-image-quality="1.0" change-on-fly="true" class="ng-isolate-scope"><canvas width="177" height="100" style="margin-top: -50px; margin-left: -88.8889px; cursor: default;"></canvas></img-crop>
+</div>
+<button class="btn ng-hide" ng-show="newup" style="border: none; color: rgb(250, 250, 251);margin-left:57px; background-color: rgb(76, 129, 191); margin-top: 10px;" ng-click="uploadimg()" align="right" aria-hidden="true">upload</button>
+</div>
+            </li>
+          </ul>
+        </div>
+        <div ng-show="user" style="
+  margin-top: 10px;
+" class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+            <span style="font-size:17px;">{{fullName}}</span>
+          </a>
+          <ul class="dropdown-menu" style="background-color:#dcdcdc;">
+            <li><a href="#" ng-click="logout()" style="
+    color:  black;
+    font-weight: 700;
+    margin-right: -1vw;
+    margin-left: -3vw;
+    height: 2vw;
+    width:11vw;
+"><i class="fa fa-fw fa-power-off" style="
+    color: red;
+"></i>Logout</a></li>
+          </ul>
+        </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+			<!--End::Nav-->
+
+<div id="front-home-page" class="ng-scope" style="background:#4c81bf;">
+  <div id="page_content_inner" style="overflow:hidden;">
+    <center>
+      <!--<div>
+        <img src="/images/top.png" style="margin-top:-134px;">
+      </div>
+      <div class="container marginTopAlign">
+        <img src="/images/coming.png">
+      </div>-->
+			<div>
+				<font id="front-home-font" style="color:white;width: 80%;top: 20%;left: 10%;/* float: left; *//* margin: auto; */font-size: xx-large;position: absolute;align-items:left">
+Every rimule spent in the rimulation will help human to realize their potential.check our rimule offering paper <a href="">here</a>
+				</font>
+			</div>
+    </center>
+  </div>
+</div>
+<!--<div style="background: #eeeeee;height:100px;" class="container-fluid">
+	<div class="row" style="margin-top:25px">
+		<center>
+<h3 style="color:#4c81bf">Token contract verified by XXXX</h3>
+</center>
+</div>
+</div>-->
+	<div style="background:white;height:fit-content;margin-top:50px;" class="container-fluid">
+		<div class="row" style="margin-top:30px">
+			<center>
+			<div style="width:70%;">
+				<div style="border-style:solid;border-width:1px;padding:10px;">
+	<h4>R<sub>(NET)</sub>=500M + R<sub>(G+S)</sub> - R<sub>(E)</sub></h4>
+</div>
+<ul style="margin-top:20px;text-align:left;font-size: initial;">
+	<li> R<sub>(NET)</sub> = Net rimule in rimulation</li>
+	<li> R<sub>(G+S)</sub> = Rimules equivalent to goods exist and service provided in rimulation</li>
+  <li> R<sub>(E)</sub> = Rimules exchanged for digital asset</li>
+  <li> M = Million</li>
+</ul>
+</div>
+</center>
+	</div>
+		</div>
+		<div style="height:fit-content;background: #eeeeee;" class="container-fluid">
+		<center>
+			<h2 style="margin-top:20px">What happens to 500M rimules minted ?</h2>
+		</center>
+
+			<div class="row" style="margin-top:50px">
+				<div class="col-md-6 col-sm-6">
+					<canvas id="pie" style="margin-top:0px !important;max-width:500px !important;max-height:250px !important" class="chart chart-pie"
+					  chart-data="alldata" chart-labels="alllabels" chart-options="alloptions" chart-colors="allcolors">
+					</canvas>
+					</div>
+			<div class="col-md-4 col-sm-4">
+				<ul style="margin-top: 5%;font-size:16px;">
+					<li>Out of 500M minted 150M rimules will be put in three phased ico sales.
+						<li style="margin-top:5px;">Remaining 350M will be kept in cold storage for kick starting rimulation.
+							<li  style="margin-top:5px;">This rimules will be spent to implement mega projects in rimulation through rimulators
+	</ul>
+			</div>
+		</div>
+			</div>
+	<div style="height:fit-content;background: #4c81bf;" class="container-fluid">
+	<center>
+		<h2 style="color:white;margin-top:20px">ICO presale 1</h2>
+	</center>
+
+		<div class="row" style="margin-top:50px">
+			<div class="col-md-6 col-sm-6">
+				<canvas id="pie1" style="margin-top:0px !important;max-width:500px !important;max-height:250px !important" class="chart chart-pie"
+					chart-data="phase1data" chart-labels="phase1labels" chart-options="phase1options" chart-colors="phase1colors">
+				</canvas>
+				</div>
+		<div class="col-md-4 col-sm-4">
+			<p style="margin-top: 5%;font-size:16px;color:white">
+<table class="table-bordered" style="color:white;font-size:16px;border-color:white">
+	<tr>
+		<td>Total rimule for sale</td>  <td>50M rimules.</td></tr>
+	<tr><td>Token price</td> <td>200 Rimules/ETH.</td></tr>
+  <tr><td></td> <td>5000 Rimules/BTC.</td></tr>
+
+	<tr><td>Hard cap</td> <td>50M rimule.</td></tr>
+
+		<tr><td>Start date</td> <td>Not decided</td></tr>
+
+	<tr><td>End date</td> <td>Not decided</td></tr>
+</tr>
+</table>
+
+<h3 style="color:white;">Highlights</h3>
+<hr style="color:white;width:100%">
+<ul class="list-styled" style="color:white;font-size:16px;margin-top:10px;align-items:left">
+	<li style="color:white;">This is people's sale.
+
+	<li style="color:white;margin-top: 5px;">Contract will restrict gas limit to avoid big sharks.
+
+		<li style="color:white;margin-top: 5px;">Minimun 1 ETH/1 BTC
+</ul>
+</p>
+		</div>
+	</div>
+	  </div>
+
+			<div style="height:fit-content;background: #eeeeee;" class="container-fluid">
+				<center>
+				<h2 style=";margin-top:50px;color:#4c81bf">ICO presale 2</h2>
+			</center>
+				<div class="row" style="margin-top:50px">
+					<div class="col-md-6 col-sm-6">
+						<canvas id="pie1" style="margin-top:0px !important;max-width:500px !important;max-height:250px !important" class="chart chart-pie"
+							chart-data="phase2data" chart-labels="phase2labels" chart-options="phase2options" chart-colors="phase2colors">
+						</canvas>
+							</ul>
+						</div>
+				<div class="col-md-4 col-sm-4">
+					<p style="margin-top: 5%;font-size:16px;">
+						<table style="color:#4c81bf;font-size:16px;border:1px solid #4c81bf">
+							<tr style="border:1px solid #4c81bf;">
+			<td style="border:1px solid #4c81bf;">Total rimule for sale </td><td style="border:1px solid #4c81bf;"> 50M rimules</td>
+</tr><tr style="border:1px solid #4c81bf;">
+			<td style="border:1px solid #4c81bf;">Token price </td><td style="border:1px solid #4c81bf;"> Not decided </td>
+</tr><tr style="border:1px solid #4c81bf;">
+				<td style="border:1px solid #4c81bf;">Hard cap </td><td style="border:1px solid #4c81bf;"> 50M rimule </td>
+</tr><tr style="border:1px solid #4c81bf;">
+				<td style="border:1px solid #4c81bf;">Start date </td><td style="border:1px solid #4c81bf;"> Not decided</td>
+</tr><tr style="border:1px solid #4c81bf;">
+					<td style="border:1px solid #4c81bf;">End date </td><td style="border:1px solid #4c81bf;"> Not decided</td></tr>
+				</table>
+				<h3 style="color:#4c81bf;">Highlights</h3>
+				<hr style="border-color:#4c81bf;width:100%"></hr>
+				<ul class="list-styled" style="color:#4c81bf;font-size:16px;margin-top:10px;align-items:left">
+					<li style="color:#4c81bf;">presale 2 commences on successful completion of milestone set afer presale 1.
+
+					<li style="color:#4c81bf;margin-top: 5px;">No gas limit on transaction.
+
+					<li style="color:#4c81bf;margin-top: 5px;">Sale will be with in rimulators[Rimulation implementors] as part of license sale.
+
+						<li style="color:#4c81bf;margin-top: 5px;">Minimun 1000 ETH/25 BTC
+
+					</ul>
+
+		</p>
+				</div>
+
+			</div>
+				</div>
+			<div style="height:fit-content;background: black;" class="container-fluid">
+				<center>
+				<h2 style=";margin-top:50px;color:white">ICO presale 3</h2>
+			</center>
+				<div class="row" style="margin-top:50px">
+					<div class="col-md-6 col-sm-6">
+						<canvas id="pie1" style="margin-top:0px !important;max-width:500px !important;max-height:250px !important" class="chart chart-pie"
+							chart-data="phase3data" chart-labels="phase3labels" chart-options="phase3options" chart-colors="phase3colors">
+						</canvas>
+							</ul>
+						</div>
+				<div class="col-md-4 col-sm-4">
+					<p style="margin-top: 5%;font-size:16px;">
+						<table class="table-bordered" style="color:white;font-size:16px;border-color:white">
+							<tr>
+			<td>Total rimule for sale </td><td> 50M rimules</td>
+</tr><tr>
+			<td>Token price </td><td> Not decided </td>
+</tr><tr>
+				<td>Hard cap </td><td> 50M rimule </td>
+</tr><tr>
+				<td>Start date </td><td> Not decided</td>
+</tr><tr>
+					<td>End date </td><td> Not decided</td></tr>
+				</table>
+		<h3 style="color:white;">Highlights</h3>
+		<hr style="color:white;width:100%">
+		<ul class="list-styled" style="color:white;font-size:16px;margin-top:10px;align-items:left">
+			<li style="color:white;">Sale will be with in a closed network with the intention of bringing in more manufacturer into the network.
+
+			</ul>
+
+		</p>
+				</div>
+
+			</div>
+				</div>
+</div>
+</div>
+<footer class="footer-distributed" style="margin-top:0px !important">
+
+	<div class="footer-left">
+
+		<div style="
+    color: #92999f;
+">
+			<i class="fa fa-map-marker" style="color:white"></i>
+
+			Ac12 2nd Avenue Annanagar Chennai, TamilNadu, India
+		</div>
+
+<!--		<div>
+			<i class="fa fa-phone"></i>
+			<p>+1 555 123456</p>
+		</div>-->
+
+		<div>
+			<i class="fa fa-envelope" style="color:white"></i>
+
+			<a style="
+    color: #92999f;
+" href="mailto:rimulation@gmail.com">rimulation@gmail.com</a>
+		</div>
+
+	</div>
+	<div class="footer-center">
+</div>
+	<div class="footer-right">
+
+		<div class="footer-icons">
+
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-linkedin"></i></a>
+			<a href="#"><i class="fa fa-github"></i></a>
+
+		</div>
+
+	</div>
+<div class="footer" style="margin-top:20px">
+<center>
+			<p class="footer-company-about">
+				Powered by
+				<span>Virtualgodown Technologies Private Limited<span>
+			</p>
+			<span style="
+    color: #92999f;
+" >Virtualgodown � 2017</span>
+		</center>
+		</div>
+</footer>
+
+
+
+<script>
+$('body').on("click", ".dropdown-menu", function (e) {
+    $(this).parent().is(".open") && e.stopPropagation();
+});
+</script>

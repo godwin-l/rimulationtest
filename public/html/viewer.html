@@ -1,0 +1,160 @@
+<html>
+<head>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+html,
+body {
+  background: #191919;
+  height: 100%; 
+  overflow:hidden;
+}
+
+body {
+  overflow:hidden;
+  font: 100% open sans, sans-serif; 
+}
+
+nav {
+  background: #111;
+ border-right: 1px solid #000;
+  box-shadow: 
+    1px 0 0 #222
+  ;
+  height: 100%;
+  width: 220px;
+}
+
+ul {
+  background: #111;
+  border-bottom: 1px solid #222;  
+} 
+
+li {
+  display: block;
+}
+
+a {
+  background: #111;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #222;
+  box-shadow:
+    inset -5px 0 0 hsla(0, 0%, 0%, .2),
+    inset 0 20px 0 #161616
+  ;
+  color: #bbb;
+  display: block;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 45px;
+  text-align: right;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px hsla(0, 0%, 0%, .5);
+  transition: all 300ms;
+}
+
+a:hover,
+a:focus,
+li.current a {
+  background: #222;
+  border-top-color: #3a3a3a;
+  box-shadow: 
+    inset -5px 0 0 #3a3a3a,
+    inset 0 20px 0 #282828
+  ;
+  color: #ddd;
+  outline: 0  ;
+  padding: 0 30px;
+  transition: all 300ms;
+}
+
+li.current a {
+  box-shadow:
+    inset -5px 0 0 #e00,
+    inset 0 20px 0 #282828
+  ;
+  padding: 0 45px;
+}
+
+a:active {
+  background: #333;
+  border-top-color: #666;
+  box-shadow: 
+    inset -5px 0 0 #666,
+    inset 0 20px 0 #444
+  ;
+  color: #fff;
+  transition: all 50ms;
+}
+
+li:first-child a {
+   border-top: none; 
+}
+.block {
+
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+$(document).ready(function () {
+    $('.nav ul li:first').addClass('active');
+    $('.tab-content:not(:first)').hide();
+    $('.nav ul li a').click(function (event) {
+        event.preventDefault();
+        var content = $(this).attr('href');
+        $(this).parent().addClass('active');
+        $(this).parent().siblings().removeClass('active');
+        $(content).show();
+        $(content).siblings('.tab-content').hide();
+    });
+});
+</script>
+<script>
+$li = $('li');
+$a = $('a');
+
+$a.on('click', function(e){
+  e.preventDefault();
+  $li.removeClass('current');
+  $(this).parent().addClass('current');
+});
+</script>
+</head>
+<div>
+<div class="nav">
+<nav style="float:left;width:23%;">
+    <ul>
+        <li><a href="#a">Singular System</a></li>
+        <li><a href="#b">Source Destination</a></li>
+		<li><a href="#c">Real Time Creation</a></li>
+		<li><a href="#d">Logical Invetory Creation</a></li>		
+		<li><a href="#e">Outbox_application-body</a></li>
+		<li><a href="#f">Drawings 1</a></li>
+        <li><a href="#g">Drawings 2</a></li>		
+    </ul>
+	</nav>
+</div>
+<div id="a" class="tab-content" style="color:white;">
+<embed src="Singularsystem_CS_DIA.pdf" width="76%" height="100%" />
+</div>
+<div id="b" class="tab-content" style="color:white;">
+<embed src="SourceDestination_CS.docx" width="76%" height="100%" />
+</div>
+<div id="c" class="tab-content" style="color:white;">
+<embed src="RealTImeCreationOfStockarea_CS.pdf" width="76%" height="100%" />
+</div>
+<div id="d" class="tab-content" style="color:white;">
+<embed src="LogicalInvetoryCreation_CS.pdf" width="76%" height="100%" />
+</div>
+<div id="e" class="tab-content" style="color:white;">
+<embed src="c__PCT-SAFE_Temp_00000002_Outbox_application-body (1).pdf" width="76%" height="100%" />
+</div>
+<div id="f" class="tab-content" style="color:white;">
+<embed src="Drawings.pdf" width="76%" height="100%" />
+</div>
+<div id="g" class="tab-content" style="color:white;">
+<embed src="Drawings (3).pdf" width="76%" height="100%" />
+</div>
+</div>
+</html>
