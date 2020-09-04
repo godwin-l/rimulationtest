@@ -6,7 +6,7 @@
   "contributors": [],
   "dependencies": {
     "nodemailer": "^4.1.1",
-    "handlebars": ">=4.3.0",
+    "handlebars": ">=4.5.3",
     "fs": ">=0.0.2"
   },
   "main": "index.js",
